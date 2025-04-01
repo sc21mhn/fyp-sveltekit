@@ -1,5 +1,5 @@
 <script>
-	import '../app.css';
+	import '../../app.css';
 	import { onMount } from 'svelte';
 	// import { supabase } from '$lib/supabaseClient';
 	import { session as sessionState } from '$lib/session.svelte';
@@ -23,7 +23,9 @@
 	});
 </script>
 
-<main class="flex flex-1 items-center">
+<div>
 	<NavBar />
-	{@render children()}
-</main>
+	<main class="relative flex flex-1 items-center">
+		{@render children()}
+	</main>
+</div>

@@ -54,6 +54,6 @@
 	<!-- Auth Buttons -->
 	<div class="flex items-center gap-4">
 		<Button variant="outline">Sign up</Button>
-		<Button variant="default">Login</Button>
+		<Button href="login" variant="default">Login</Button>
 	</div>
 </header>
