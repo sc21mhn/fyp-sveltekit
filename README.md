@@ -17,7 +17,7 @@
    npm install
    ```
 
-3. Environment setup
+3. Environment setup ( not necessary , file included ) 
    - Create a `.env` file based on `.env.example`
    - Set up your Supabase credentials
 
