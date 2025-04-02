@@ -12,10 +12,10 @@
 	import { Separator } from '$lib/components/ui/separator';
 	import { onMount } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
-	
+
 	// Animation control
 	let visible = $state(false);
-	
+
 	onMount(() => {
 		visible = true;
 	});
@@ -30,23 +30,23 @@
 				Where Your Bad Drawings <span class="text-primary">Turn Into Brilliant Ideas</span>
 			</h1>
 			<p class="max-w-prose text-lg text-muted-foreground">
-				It doesn't matter if you draw like an artist or a toddler - our whiteboard helps you
-				work together and share ideas. No need to be perfect, just have fun and create!
+				It doesn't matter if you draw like an artist or a toddler - our whiteboard helps you work
+				together and share ideas. No need to be perfect, just have fun and create!
 			</p>
 			<div class="flex flex-wrap gap-4">
 				<Button size="lg">Get Started</Button>
 				<Button variant="outline" size="lg">Learn More</Button>
 			</div>
 		</div>
-		
+
 		<!-- Hero Image -->
 		<div class="relative" in:fade={{ duration: 1000, delay: 400 }}>
 			<div class="overflow-hidden rounded-lg shadow-xl">
-				<img
+				<!-- <img
 					src="/images/whiteboard.jpg"
 					alt="Whiteboard canvas interface"
 					class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-				/>
+				/> -->
 			</div>
 			<div class="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-lg bg-primary/20"></div>
 		</div>
@@ -62,23 +62,7 @@
 		</div>
 
 		<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-			{#each [
-				{
-					title: 'Live Whiteboard',
-					description: 'Draw, write and brainstorm in real time with your team',
-					icon: '✏️'
-				},
-				{
-					title: 'File and Image Sharing',
-					description: 'Upload and add files and notes easily',
-					icon: '📁'
-				},
-				{
-					title: 'Team Collaboration Tools',
-					description: 'Comment and organize ideas seamlessly',
-					icon: '👥'
-				}
-			] as service, i}
+			{#each [{ title: 'Live Whiteboard', description: 'Draw, write and brainstorm in real time with your team', icon: '✏️' }, { title: 'File and Image Sharing', description: 'Upload and add files and notes easily', icon: '📁' }, { title: 'Team Collaboration Tools', description: 'Comment and organize ideas seamlessly', icon: '👥' }] as service, i}
 				<div in:fly={{ y: 20, duration: 800, delay: 200 + i * 150 }}>
 					<Card class="overflow-hidden p-6 transition-all duration-300 hover:shadow-lg">
 						<div class="mb-4 text-4xl">{service.icon}</div>
@@ -100,30 +84,14 @@
 		</div>
 
 		<div class="grid gap-12 md:grid-cols-2">
-			{#each [
-				{
-					title: 'Real-time Collaboration',
-					description:
-						'Work together instantly with your team, no delays or waiting for updates'
-				},
-				{
-					title: 'Easy to Use',
-					description:
-						'Simple tools with no learning curve - jump right in and start creating'
-				},
-				{
-					title: 'Anywhere, Anytime',
-					description:
-						'Access your whiteboards from any device, whenever and wherever you need them'
-				},
-				{
-					title: 'Unlimited Creativity',
-					description:
-						'Draw, brainstorm and organize ideas freely with our flexible canvas'
-				}
-			] as feature, i}
-				<div class="flex gap-4" in:fly={{ x: i % 2 ? 20 : -20, duration: 800, delay: 200 + i * 100 }}>
-					<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+			{#each [{ title: 'Real-time Collaboration', description: 'Work together instantly with your team, no delays or waiting for updates' }, { title: 'Easy to Use', description: 'Simple tools with no learning curve - jump right in and start creating' }, { title: 'Anywhere, Anytime', description: 'Access your whiteboards from any device, whenever and wherever you need them' }, { title: 'Unlimited Creativity', description: 'Draw, brainstorm and organize ideas freely with our flexible canvas' }] as feature, i}
+				<div
+					class="flex gap-4"
+					in:fly={{ x: i % 2 ? 20 : -20, duration: 800, delay: 200 + i * 100 }}
+				>
+					<div
+						class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary"
+					>
 						{i + 1}
 					</div>
 					<div>
@@ -155,12 +123,12 @@
 	:global(html) {
 		scroll-behavior: smooth;
 	}
-	
+
 	/* Animation classes */
 	.animate-in {
 		animation: fadeIn 0.8s ease-out forwards;
 	}
-	
+
 	@keyframes fadeIn {
 		from {
 			opacity: 0;

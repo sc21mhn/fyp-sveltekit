@@ -39,7 +39,9 @@
 	});
 </script>
 
-<header class="fixed left-0 top-0 z-50 w-full border-b bg-background/95 backdrop-blur transition-all">
+<header
+	class="fixed left-0 top-0 z-50 w-full border-b bg-background/95 backdrop-blur transition-all"
+>
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<div class="flex h-16 items-center justify-between">
 			<!-- Logo -->
@@ -51,7 +53,10 @@
 
 			<!-- Desktop Navigation -->
 			<nav class="hidden items-center space-x-8 md:flex">
-				<a href="/" class="text-sm font-medium text-foreground transition-colors hover:text-primary">
+				<a
+					href="/"
+					class="text-sm font-medium text-foreground transition-colors hover:text-primary"
+				>
 					Home
 				</a>
 				<a
@@ -70,11 +75,13 @@
 				<!-- Support Dropdown -->
 				<div class="relative" bind:this={supportRef}>
 					<button
-						on:click|stopPropagation={toggleSupport}
+						onclick={toggleSupport}
 						class="flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
 					>
 						Support
-						<ChevronDown class={`h-4 w-4 transition-transform ${isSupported ? 'rotate-180' : ''}`} />
+						<ChevronDown
+							class={`h-4 w-4 transition-transform ${isSupported ? 'rotate-180' : ''}`}
+						/>
 					</button>
 
 					{#if isSupported}
@@ -109,7 +116,7 @@
 
 			<!-- Mobile menu button -->
 			<button
-				on:click={toggleMenu}
+				onclick={toggleMenu}
 				class="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-muted hover:text-foreground focus:outline-none md:hidden"
 			>
 				<span class="sr-only">Open main menu</span>
@@ -142,7 +149,7 @@
 					>Pricing</a
 				>
 				<button
-					on:click={toggleSupport}
+					onclick={toggleSupport}
 					class="flex w-full items-center justify-between rounded-md px-3 py-2 text-base font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
 				>
 					Support
