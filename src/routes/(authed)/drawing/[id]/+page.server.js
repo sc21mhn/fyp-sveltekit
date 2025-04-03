@@ -1,10 +1,10 @@
-export const load = async ({ params, parent, url }) => {
+export const load = async ({ params, parent }) => {
 	await parent();
-	console.log(url);
-	console.log(params);
-	const data = { 1: 'a' };
+
+	// Extract the drawing ID from params
+	const { id } = params;
 
 	return {
-		data
+		id
 	};
 };

@@ -10,6 +10,7 @@
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import { Input } from '$lib/components/ui/input/index.js';
+	import { goto } from '$app/navigation';
 
 	let user = $derived({
 		username: session.user?.user_metadata.preferred_username,
@@ -224,7 +225,7 @@
 				variant="outline"
 				class="border-none bg-transparent"
 				size="icon"
-				onclick={createNewDrawing}
+				on:click={createNewDrawing}
 			>
 				<FilePlus2 />
 			</Button>
@@ -241,11 +242,14 @@
 							No drawings yet. Click the + button to create one.
 						</div>
 					{:else}
+						<!-- svelte-ignore a11y_no_static_element_interactions -->
 						{#each drawings as drawing (drawing.id)}
+							<!-- svelte-ignore a11y_click_events_have_key_events -->
 							<div
-								class="group flex items-center justify-between rounded px-2 py-1.5 hover:bg-muted/50"
+								class="group flex cursor-pointer items-center justify-between rounded px-2 py-1.5 hover:bg-muted/50"
+								onclick={() => goto(`/drawing/${drawing.id}`)}
 							>
-								<div class="truncate text-sm">
+								<div class="truncate text-sm hover:underline">
 									{drawing.title}
 								</div>
 								<DropdownMenu.Root>
