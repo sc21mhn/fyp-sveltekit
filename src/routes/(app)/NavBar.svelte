@@ -40,7 +40,7 @@
 </script>
 
 <header
-	class="fixed left-0 top-0 z-50 w-full border-b bg-background/95 backdrop-blur transition-all"
+	class="fixed left-0 top-0 z-50 w-full border-b bg-background/95 backdrop-blur-sm transition-all"
 >
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<div class="flex h-16 items-center justify-between">
@@ -117,7 +117,7 @@
 			<!-- Mobile menu button -->
 			<button
 				onclick={toggleMenu}
-				class="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-muted hover:text-foreground focus:outline-none md:hidden"
+				class="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-muted hover:text-foreground focus:outline-hidden md:hidden"
 			>
 				<span class="sr-only">Open main menu</span>
 				{#if isMenuOpen}

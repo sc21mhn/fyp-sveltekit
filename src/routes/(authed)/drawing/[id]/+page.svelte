@@ -516,7 +516,7 @@
 	class="relative flex h-screen min-h-[500px] w-full overflow-hidden border border-gray-300 bg-gray-50"
 >
 	<div
-		class="sidebar-toolbar relative z-10 flex w-16 flex-shrink-0 flex-col items-center gap-2 border-r border-gray-300 bg-gray-100 py-3"
+		class="sidebar-toolbar relative z-10 flex w-16 shrink-0 flex-col items-center gap-2 border-r border-gray-300 bg-gray-100 py-3"
 	>
 		<button
 			class={`flex h-11 w-11 items-center justify-center rounded-full text-gray-600 transition-colors ${currentTool === 'pen' ? 'bg-blue-50 text-blue-600' : 'hover:bg-gray-200'}`}
@@ -609,7 +609,7 @@
 						<small>Custom</small>
 						<div class="relative">
 							<div
-								class="flex h-7 w-7 items-center justify-center rounded-full border-2 border-gray-200 shadow-sm transition-transform hover:scale-110"
+								class="flex h-7 w-7 items-center justify-center rounded-full border-2 border-gray-200 shadow-xs transition-transform hover:scale-110"
 								style={`background-color: ${penColor};`}
 							>
 								<span class="text-xs text-white mix-blend-difference">+</span>
@@ -647,7 +647,7 @@
 			</div>
 		{/if}
 
-		<div class="flex-grow"></div>
+		<div class="grow"></div>
 
 		<button
 			class={`mt-2 flex h-11 w-11 items-center justify-center rounded-full text-gray-600 transition-colors ${!canUndo ? 'cursor-not-allowed opacity-40' : 'hover:bg-gray-200'}`}
@@ -674,7 +674,7 @@
 		onmouseup={handleMouseUp}
 		onmouseleave={handleMouseLeave}
 		onwheel={handleWheel}
-		class="block h-full w-full flex-grow touch-none"
+		class="block h-full w-full grow touch-none"
 		style={`background-color: ${BACKGROUND_COLOR};`}
 	></canvas>
 </div>
