@@ -44,7 +44,7 @@
 <Sidebar.Provider bind:open>
 	<AppSidebar renderSidebarHeader={sidebarTrigger} {supabase} {open} />
 	<Sidebar.Inset>
-		<div class="container mx-auto">
+		<div class="w-full">
 			{@render children()}
 		</div>
 	</Sidebar.Inset>

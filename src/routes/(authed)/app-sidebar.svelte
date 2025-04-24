@@ -222,12 +222,11 @@
 
 		{#if open}
 			<Button
-				variant="outline"
-				class="border-none bg-transparent"
-				size="icon"
-				on:click={createNewDrawing}
+				variant="secondary"
+				class="m-3 hover:bg-foreground hover:text-primary-foreground"
+				onclick={createNewDrawing}
 			>
-				<FilePlus2 />
+				<FilePlus2 /> New Drawing
 			</Button>
 		{/if}
 	</Sidebar.Header>
